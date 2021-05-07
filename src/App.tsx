@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Home, Nominations } from "./pages";
+import { Sidebar, Notification, Nav } from "./components";
+import { useSelector } from "react-redux";
+import menu from "./assets/menu.png";
+import "./App.css";
+import { useState } from "react";
 
-function App() {
+const routes = [
+  {
+    path: "/",
+    exact: true,
+    sidebar: () => <div>home!</div>,
+    main: Home,
+  },
+  {
+    path: "/nominations",
+    sidebar: () => <div>bubblegum!</div>,
+    main: Nominations,
+  },
+];
+
+const App = () => {
+  const { nominations } = useSelector((state: any) => state.nominations);
+
+  const [showSideBar, setShowSideBar] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {nominations.length > 5 && <Notification />}
+      <div className="container">
+        <Sidebar />
+
+        <div className="main">
+          <Nav />
+          <Switch>
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                children={<route.main />}
+              />
+            ))}
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

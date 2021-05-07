@@ -1,0 +1,26 @@
+.sidebar {
+  padding: 10px;
+  background-color: #ededf3;
+  position: fixed;
+  height: 100%;
+  width: 200px;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.title > span:nth-child(2) {
+  color: #fc6549;
+}
+
+.link {
+  color: #b4b4b8;
+  text-decoration: none;
+}
+
+.link-active {
+  color: #fc6549;
+  text-decoration: none;
+}

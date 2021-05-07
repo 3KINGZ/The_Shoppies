@@ -1,0 +1,41 @@
+.movie {
+  width: 200px;
+  min-height: 200px;
+  margin: 10px;
+}
+
+.poster {
+  min-height: 100;
+  width: 100;
+  border-radius: 8px;
+}
+
+.title-container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2b3039;
+  font-size: 1.2em;
+}
+
+.button {
+  width: 100%;
+  padding: 10px 0 10px 0;
+  background-color: #fc6549;
+  border-color: #fc6549;
+  border-width: 0.5;
+  border-radius: 5px;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .movie {
+    width: 100%;
+    align-self: center;
+  }
+  .poster {
+    width: 100%;
+  }
+}
