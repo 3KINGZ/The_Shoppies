@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as types from "./types";
 
-const baseURL = "http://www.omdbapi.com/?apikey=d8866fe5";
+const baseURL = "https://www.omdbapi.com/?apikey=d8866fe5";
 
 export const searchMovies = (searchTerm: string) => async (dispatch: any) => {
   if (!searchTerm) {
