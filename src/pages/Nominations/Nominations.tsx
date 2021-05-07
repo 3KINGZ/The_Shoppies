@@ -7,7 +7,13 @@ export const Nominations = () => {
   return (
     <div style={{ width: "100%", paddingTop: 10 }}>
       <h1>Nominations</h1>
-      <Movies data={nominations} />
+      {nominations.length < 1 ? (
+        <h1 style={{ textAlign: "center" }}>
+          You haven't nominated any movie yet
+        </h1>
+      ) : (
+        <Movies data={nominations} />
+      )}
     </div>
   );
 };
