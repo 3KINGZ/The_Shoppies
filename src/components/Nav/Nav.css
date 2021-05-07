@@ -2,6 +2,14 @@
   display: none;
 }
 
+.mobile-nav {
+  color: grey;
+}
+
+.mobile-nav-active {
+  color: #fc6549;
+}
+
 @media screen and (max-width: 768px) {
   .nav {
     display: block;

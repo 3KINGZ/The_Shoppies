@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addToNomination,
-  removeFromNomination,
-} from "../../actions/nomination";
+import { addToNomination, removeFromNomination } from "../../actions";
 import imgPlaceholder from "../../logo.svg";
 import "./Movie.css";
 

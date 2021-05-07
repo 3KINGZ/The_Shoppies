@@ -17,7 +17,7 @@ const movieReducer = (
       return { ...state, loading: true };
 
     case types.SEARCH_MOVIE.SUCCESS:
-      return { ...state, loading: false, movies: payload };
+      return { loading: false, movies: payload, message: null };
 
     case types.SEARCH_MOVIE.FAILURE:
       return { ...state, loading: false, message: payload };
