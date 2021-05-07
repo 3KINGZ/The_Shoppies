@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { searchMovies } from "../../actions/movie";
 import { Movies } from "../../components";
-import loading from "../../assets/loading.svg";
 import "./Home.css";
 
 export const Home = () => {
@@ -27,11 +26,7 @@ export const Home = () => {
         onKeyPress={(event) => (event.key === "Enter" ? _searchMovies() : null)}
       />
       {loading ? (
-        <img
-          src="../../assets/loading.svg"
-          style={{ height: "150px", width: "150px" }}
-          alt="loading-spinner"
-        />
+        <h1 style={{ textAlign: "center" }}>Loading...</h1>
       ) : message ? (
         <h2>{message}</h2>
       ) : (

@@ -2,9 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home, Nominations } from "./pages";
 import { Sidebar, Notification, Nav } from "./components";
 import { useSelector } from "react-redux";
-import menu from "./assets/menu.png";
 import "./App.css";
-import { useState } from "react";
 
 const routes = [
   {
@@ -22,8 +20,6 @@ const routes = [
 
 const App = () => {
   const { nominations } = useSelector((state: any) => state.nominations);
-
-  const [showSideBar, setShowSideBar] = useState(false);
 
   return (
     <Router>
